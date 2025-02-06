@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseurl = "http://localhost:5000"
+const baseurl = "https://shipment-tracking-system.onrender.com"
 
 export const fetchShipments = createAsyncThunk('shipment/fetchShipments', async () => {
     const response = await axios.get(`${baseurl}/api/shipments`);

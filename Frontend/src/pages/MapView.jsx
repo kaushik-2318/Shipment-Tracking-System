@@ -20,7 +20,7 @@ const ShipmentMap = () => {
         const getShipment = async () => {
             try {
                 setLoading(true)
-                const res = await axios.get(`http://localhost:5000/api/shipment/${path}`)
+                const res = await axios.get(`https://shipment-tracking-system.onrender.com/api/shipment/${path}`)
                 setShipment(res.data)
                 setLoading(false)
             } catch (error) {
