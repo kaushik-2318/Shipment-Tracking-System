@@ -1,10 +1,8 @@
-"use client"
-
 import { useDispatch } from "react-redux"
 import { addShipment } from "../redux/shipmentSlice"
 import AddShipmentForm from "./AddShipment"
 
-export default function ShipmentFormContainer() {
+export default function ShipmentFormContainer({ handleShipmentAdded }) {
     const dispatch = useDispatch()
 
     const handleSubmit = (data) => {
@@ -19,5 +17,5 @@ export default function ShipmentFormContainer() {
         )
     }
 
-    return <AddShipmentForm onSubmit={handleSubmit} />
+    return <AddShipmentForm onSubmit={handleSubmit} handleShipmentAdded={handleShipmentAdded} />
 }

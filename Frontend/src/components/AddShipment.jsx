@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { useForm, Controller } from "react-hook-form"
 import { motion } from "framer-motion"
@@ -10,7 +8,7 @@ import { Label } from "./ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import BackgroundAnimation from "./BackgroundAnimation"
 
-export default function AddShipmentForm({ onSubmit }) {
+export default function AddShipmentForm({ onSubmit, handleShipmentAdded }) {
     const { control, handleSubmit, reset, formState: { errors } } = useForm()
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -19,6 +17,7 @@ export default function AddShipmentForm({ onSubmit }) {
         await onSubmit(data)
         reset()
         setIsSubmitting(false)
+        handleShipmentAdded()
     }
 
     return (
