@@ -13,7 +13,7 @@ app.use(cors());
 
 connectDB();
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Server is running');
 })
 
