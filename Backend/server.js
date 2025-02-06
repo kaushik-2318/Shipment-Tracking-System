@@ -13,6 +13,10 @@ app.use(cors());
 
 connectDB();
 
+app.use('/', (req, res) => {
+    res.send('Server is running');
+})
+
 app.use('/api', shipmentRoutes);
 
 const PORT = process.env.PORT || 5000;
